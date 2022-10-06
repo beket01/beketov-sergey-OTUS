@@ -11,7 +11,7 @@ function  maxItemAssociation(transactions) {
                     if (!found.associationItems.includes(t)) found.associationItems.push(t)
                 })
             } else {
-                items.push({name: item, frequency: 1, associationItems: transaction.slice(0)})
+                items.push({name: item, frequency: 1, associationItems: [...transaction]})
             }
         })
     })
@@ -23,20 +23,20 @@ function  maxItemAssociation(transactions) {
     // Состовляем все возможные ассоциациативные ряды
     let associations = []
     transactions.forEach(transaction => {
-        let association = []
+        let association = new Set()
         items.forEach(item => {
             if(transaction.includes(item.name)) {
                 item.associationItems.forEach(ai => {
-                    if(!association.includes(ai)) association.push(ai)
+                    association.add(ai)
                 })
             }
         })
-        if(association.length > 0) associations.push(association.sort())
+        if(association.size > 0) associations.push(Array.from(association).sort())
     })
 
     // Сортируем ассоциации по длинне и в алфавитном порядке
     associations.sort((a, b) => {
-        if(b.length === a.length) return a.join('') > b.join('') ? 1 : -1
+        if(b.length === a.length) return a.join().localeCompare(b.join())
         return b.length - a.length
     })
 
