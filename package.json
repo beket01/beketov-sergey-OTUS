@@ -1,0 +1,29 @@
+{
+  "name": "beketov-sergey-otus",
+  "version": "1.0.0",
+  "description": "OTUS project for study",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beket01/beketov-sergey-OTUS.git"
+  },
+  "keywords": [
+    "OTUS",
+    "js",
+    "javascript",
+    "node",
+    "npm"
+  ],
+  "author": "Sergey Beketov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/beket01/beketov-sergey-OTUS/issues"
+  },
+  "homepage": "https://github.com/beket01/beketov-sergey-OTUS#readme",
+  "devDependencies": {
+    "jest": "^29.3.1"
+  }
+}

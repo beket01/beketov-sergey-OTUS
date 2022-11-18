@@ -1,0 +1,4 @@
+# Node modules files
+/node_modules/
+# JetBrains IDE
+/.idea/
