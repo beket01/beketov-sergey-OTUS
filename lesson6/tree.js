@@ -1,6 +1,7 @@
 const fs = require('fs');
+const path = process.env.npm_config_path || '.';
 
-function tree(dir, filesAndFolders) {
+async function tree(dir, filesAndFolders) {
     if (!filesAndFolders) {
         filesAndFolders = {
             files: [],
@@ -9,26 +10,28 @@ function tree(dir, filesAndFolders) {
     }
 
     filesAndFolders.folders.push(dir)
-    fs.promises.readdir(dir)
-        .then(response => {
-            response.forEach(item => {
-                const itemDir = `${dir}/${item}`
-                fs.stat(itemDir, (err, stats) => {
-                    if (stats.isDirectory()) {
-                        tree(`${itemDir}`, filesAndFolders)
-                    } else {
-                        filesAndFolders.files.push(itemDir)
-                    }
-                })
-            })
-        })
-        .catch(error => {
-            console.log('Error occurred while reading directory!', error)
-        })
+     await fs.promises
+         .readdir(dir)
+         .then(async (response) => {
+             for(const item of response) {
+                 const itemDir = `${dir}/${item}`
+                 const stats = await fs.promises.stat(itemDir)
 
-    console.log(filesAndFolders)
+                 if (stats.isDirectory()) {
+                     await tree(`${itemDir}`, filesAndFolders)
+                 } else {
+                     filesAndFolders.files.push(itemDir)
+                 }
+             }
+         })
+         .catch(error => {
+             console.log('Error occurred while reading directory!', error)
+         })
+
     return filesAndFolders
 }
 
-const result = tree('foo')
-console.log(result)
+tree(path)
+    .then(r => {
+        console.log(r)
+    })
