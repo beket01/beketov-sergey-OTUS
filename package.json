@@ -4,7 +4,8 @@
   "description": "OTUS project for study",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "tree": "node ./lesson6/tree.js"
   },
   "repository": {
     "type": "git",
