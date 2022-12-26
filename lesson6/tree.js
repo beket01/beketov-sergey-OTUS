@@ -1,4 +1,4 @@
-const fs = require('fs');
+import fs from 'fs';
 const path = process.env.npm_config_path || '.';
 
 async function tree(dir, filesAndFolders) {

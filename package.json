@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "description": "OTUS project for study",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "jest",
-    "tree": "node ./lesson6/tree.js"
+    "tree": "node ./lesson6/tree.js",
+    "shop": "node ./lesson13/e-commerce-shop.js"
   },
   "repository": {
     "type": "git",
@@ -26,5 +28,9 @@
   "homepage": "https://github.com/beket01/beketov-sergey-OTUS#readme",
   "devDependencies": {
     "jest": "^29.3.1"
+  },
+  "dependencies": {
+    "@apollo/server": "^4.3.0",
+    "graphql": "^16.6.0"
   }
 }
