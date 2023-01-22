@@ -24,6 +24,11 @@
   },
   "homepage": "https://github.com/beket01/beketov-sergey-OTUS#readme",
   "devDependencies": {
-    "jest": "^29.3.1"
+    "@testing-library/jest-dom": "^5.16.5",
+    "jest": "^29.3.1",
+    "jest-environment-jsdom": "^29.3.1"
+  },
+  "dependencies": {
+    "@testing-library/dom": "^8.20.0"
   }
 }
