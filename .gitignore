@@ -2,3 +2,4 @@
 /node_modules/
 # JetBrains IDE
 /.idea/
+/lesson17/node_modules/
