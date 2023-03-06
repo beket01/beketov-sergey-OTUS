@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300;500&display=swap');
+
+* {
+    font-family: 'Dosis', sans-serif;
+}
+
+body {
+    background-color: rgb(203, 162, 103);
+}
+
+.wrapper {
+    margin: 100px auto;
+}
+
+.weather {
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 350px;
+    border-radius: 15px;
+    background-color: #6b958f;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+}
+
+.weather__loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.weather__loading img {
+    min-width: 50px;
+}
+
+.weather__header {
+    display: flex;
+}
+
+.weather__main {
+    flex: 1 1 auto;
+}
+
+.weather__city {
+    font-size: 40px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.weather__status {
+    margin-top: 10px;
+    font-weight: 300;
+    font-size: 20px;
+    
+}
+
+.weather__temp {
+    margin-top: 5px;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.weather__feels-like {
+    margin-top: 5px;
+    font-size: 18px;
+}
+
+.weather__temp::after,
+.weather__feels-like::after {
+    content: "℃";
+    margin-left: 2px;
+}
